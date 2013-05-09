@@ -11,7 +11,7 @@ F_CPU=12000000 # The IR Code runs with either 12 or 16MHz
 DEVICE=atmega8 # should compile on ATMega8 and ATMega*8
 DEBUG_LEVEL=0  # Serial console with 19200 Bps on PIND1
 
-AVRDUDE = avrdude -c avrisp -P com8 -b 19200 -p $(DEVICE)
+AVRDUDE = avrdude -c stk500 -P com9 -p $(DEVICE)
 
 COMPILE = avr-gcc -Wall -Os -Iir -Iuart -Iusbdrv -I. -mmcu=$(DEVICE) -DF_CPU=$(F_CPU) -DDEBUG_LEVEL=$(DEBUG_LEVEL) -std=gnu99
 

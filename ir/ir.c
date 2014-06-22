@@ -93,7 +93,7 @@
 
 // input pin IR-receiver is connected to
 // has to match interrupt handler setup in main!
-#define ir_input()  (!((PIND) & 4))
+#define ir_input()  (!((PIND) & 8))
 //#define ir_input()  (!((PINB) & 2))
 
 // debug / logging defines (i.e. re-engineer unknown/new IR protocols)

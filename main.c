@@ -104,14 +104,15 @@ ISR(PCINT2_vect) {
 uchar mod_key = 0;
 
 static int lookupKey(uint32_t merlinKey) {
-	for (int i = 0; i<= NUM_MODS; i++) {
+	for (int i = 0; i< NUM_MODS; i++) {
 		if (modmap[i].merlin == merlinKey) {
-// FIXME: This isn't working correctly, dog knows why..
+// FIX by DD5XL: wrong <= replaced by < in both for loops
+
 			mod_key |= (modmap[i].usb);
 			return 0;
 		}
 	}
-	for (int i = 0; i<= NUM_KEYS; i++) {
+	for (int i = 0; i< NUM_KEYS; i++) {
 		if (keymap[i].merlin == merlinKey) {
 			return keymap[i].usb;
 		}

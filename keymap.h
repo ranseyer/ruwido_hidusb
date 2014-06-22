@@ -218,7 +218,7 @@ struct keymap_t {
 	uint8_t  usb;
 };
 
-struct keymap_t modmap[NUM_KEYS] = {
+struct keymap_t modmap[NUM_MODS] = {
 		{ MERLIN_MOD_CONTROL_LEFT,     MOD_CONTROL_LEFT     },
 		{ MERLIN_MOD_SHIFT_LEFT,       MOD_SHIFT_LEFT       },
 		{ MERLIN_MOD_ALT_LEFT,         MOD_ALT_LEFT         },

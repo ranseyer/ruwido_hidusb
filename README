@@ -11,18 +11,28 @@ It runs on the ATMega8 as well as the 48-328 family. You also need a
 See http://vusb.wikidot.com/hardware for general information on the
 USB-interface.
 
-To run the unmodified code connect your controller like this:
+This Package is configured for the USBASP,solder the TSOP output to PIND3 of the controller.
 
-PD0: USB D-
-PD2: USB D+
-PD3: TSOP 1756 Output
-PB6/7: 12MHz or 16MHz Crystal
 
-The IR decoder can run with either 12 or 16 MHz, other frequencies are not
-supported.
+/* ---------------------------- Hardware Config ---------------------------- */
 
-If you want to run this on a USBASP you will have to change the pin for
-USB D+ in usbconfig.h and solder the TSOP output to PIND3 of the controller.
+
+#define USB_CFG_IOPORTNAME      B
+/* This is the port where the USB bus is connected. When you configure it to
+ * "B", the registers PORTB, PINB and DDRB will be used.
+ */
+#define USB_CFG_DMINUS_BIT      0
+/* This is the bit number in USB_CFG_IOPORT where the USB D- line is connected.
+ * This may be any bit in the port.
+ */
+#define USB_CFG_DPLUS_BIT       1
+/* This is the bit number in USB_CFG_IOPORT where the USB D+ line is connected.
+ * This may be any bit in the port. Please note that D+ must also be connected
+ * to interrupt pin INT0!
+ */
+
+
+This Package is configured for the USBASP,solder the TSOP output to PIND3 of the controller.
 
 TODO:
 
